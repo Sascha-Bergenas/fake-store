@@ -1,5 +1,5 @@
 import { getData } from "./apiService.js";
-import { productCard } from "./uiComponent.js";
+import { productCard, displayLoading } from "./uiComponent.js";
 
 const searchField = document.querySelector("input");
 const searchButton = document.querySelector("button");

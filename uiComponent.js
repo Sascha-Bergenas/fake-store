@@ -25,7 +25,6 @@ export function productSearch(event, searchField) {
   }
 }
 
-const displayLoading = async () => {
-  nameElement.textContent = "Loading...";
+export const displayLoading = async () => {
+  return statusElement;
 };
-displayLoading();
