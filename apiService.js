@@ -1,4 +1,4 @@
-async function getData() {
+export async function getData() {
   const url = "https://fakestoreapi.com/products";
   try {
     const response = await fetch(url);
@@ -7,8 +7,20 @@ async function getData() {
     }
 
     const result = await response.json();
-    console.log(result);
+
+    result.forEach((product) =>
+      console.log(
+        product.title,
+        product.price,
+        product.description,
+        product.image
+      )
+    );
+
+    return result;
   } catch (error) {
     console.error(error.message);
   }
 }
+
+getData();
