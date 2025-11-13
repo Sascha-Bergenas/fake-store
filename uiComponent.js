@@ -1,3 +1,29 @@
+export function showProductModal(product){
+           
+    const productModal = document.createElement("dialog")
+    productModal.id = "product-modal"
+    productModal.style = `
+        background: solid #00000080;        
+    `
+    
+    const productImage = document.createElement("img")
+    productImage.id = "product-image"
+    productImage.alt = product.title
+    productImage.src = product.image
+
+    const productDetails = document.createElement("ul")
+    productDetails.id = "product-details"
+    const {image, ...textDetails} = product
+    for(let element in textDetails) {
+        const li = document.createElement("li")
+        li.textContent = element
+        productDetails.appendChild(li)
+    };
+
+    productModal.append(productImage, productDetails)
+    document.body.appendChild(productModal)
+    productModal.showModal()
+}
 export function productCard(product) {
   const container = document.getElementById("product-list");
 
@@ -10,6 +36,7 @@ export function productCard(product) {
     <p>${product.description}</p>
     <img src="${product.image}" />
   `;
+card.addEventListener("click", showProduct(product))
 
   return card;
 }
@@ -23,4 +50,22 @@ export function productSearch(event, searchField) {
     const product1 = searchField.value;
     console.log("search:", product1);
   }
+}
+
+export function renderSearched(searched) {
+  const container = document.getElementById("product-list");
+  container.innerHTML = "";
+
+  searched.forEach((product) => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    card.innerHTML = `
+            <h2>${product.title}</h2>
+            <p>$${product.price}</p>
+            <p>${product.description}</p>
+            <img src="${product.image}" />
+          `;
+    container.append(card);
+  });
 }

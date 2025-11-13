@@ -9,21 +9,23 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav>meny</nav>
-    <h1>Fake-Store</h1>
+    <nav>
+      <h1>FakeStore</h1>
+      <ul>
+        <li><a href="#">Clothes</a></li>
+        <li><a href="#">Bags</a></li>
+        <li><a href="#">Jewellry</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <input id="search-product" type="text" placeholder="search" />
 
-    <input id="search-product" type="text" placeholder="search" />
+      <button>Search</button>
+      <div id="product-list"></div>
 
-    <button>Search</button>
-    <div id="product-list"></div>
-
-    <div class="cards">
-      <div id="card-1"></div>
-      <div id="card-2">
-        <p id="product-info">Loading...</p>
-      </div>
+      <div class="cards"></div>
+      <div id="productList"></div>
     </div>
-    <div id="productList"></div>
     <footer></footer>
   </body>
 </html>
