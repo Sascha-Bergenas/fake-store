@@ -1,11 +1,10 @@
 export function showProductModal(product){
            
-    const productModal = document.createElement("dialog")
-    productModal.id = "product-modal"
+    const productModal = document.querySelector("#product-modal")
     productModal.style = `
         background: solid #00000080;        
     `
-    
+
     const productImage = document.createElement("img")
     productImage.id = "product-image"
     productImage.alt = product.title
@@ -20,8 +19,8 @@ export function showProductModal(product){
         productDetails.appendChild(li)
     };
 
-    productModal.append(productImage, productDetails)
-    document.body.appendChild(productModal)
+    productModal.replaceChildren(productImage, productDetails)
+    productModal.attributes
     productModal.showModal()
 }
 export function productCard(product) {
@@ -36,7 +35,6 @@ export function productCard(product) {
     <p>${product.description}</p>
     <img src="${product.image}" />
   `;
-card.addEventListener("click", showProduct(product))
 
   return card;
 }

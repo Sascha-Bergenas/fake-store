@@ -1,4 +1,4 @@
-import {showProductModal as showProduct} from "./uiComponent.js"
+import {showProductModal as showProduct } from "./uiComponent.js"
 
 import { getData } from "./apiService.js";
 import { productCard, renderSearched } from "./uiComponent.js";
@@ -14,10 +14,14 @@ async function init() {
   products.forEach((product) => {
     const card = productCard(product);
     container.appendChild(card);
+    card.addEventListener("click", () => {
+        showProduct(product)})
   });
 }
 
 init();
+
+
 
 searchButton.addEventListener("click", async () => {
   const products = await getData();
