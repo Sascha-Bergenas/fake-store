@@ -3,3 +3,8 @@ export async function handleSearch() {
 
   return getData(input);
 }
+
+const displayLoading = async () => {
+  nameElement.textContent = "Loading...";
+};
+displayLoading();
