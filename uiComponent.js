@@ -54,7 +54,36 @@ export function renderSearched(searched) {
   const container = document.getElementById("product-list");
   container.innerHTML = "";
 
+  if (searched.length === 0) {
+    const card = document.createElement("div");
+    card.textContent = "Finns ingen sån";
+    card.style.color = "red";
+
+    container.append(card);
+  }
+
   searched.forEach((product) => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    card.innerHTML = `
+            <h2>${product.title}</h2>
+            <p>$${product.price}</p>
+            <p>${product.description}</p>
+            <img src="${product.image}" />
+          `;
+    container.append(card);
+  });
+}
+
+export function renderSort(productArr) {
+  console.log(productArr);
+  const sorted = productArr.sort((a, b) => a.price - b.price);
+  console.log(sorted);
+  const container = document.getElementById("product-list");
+  container.innerHTML = "";
+
+  sorted.forEach((product) => {
     const card = document.createElement("div");
     card.classList.add("product-card");
 
