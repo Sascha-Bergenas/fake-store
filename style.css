@@ -102,10 +102,13 @@ button:focus {
     border-radius: 10px;
     padding: 1rem;
     width: 100%;
+    margin-top: 20px;
 }
 
 .product-card:hover{
     transform: scale(1.05);
+    background: var(--accent-color);
+    transition: calc(0.4s);
 }
 
 .product-card img{
@@ -140,6 +143,7 @@ nav ul {
 nav li {
   padding-left: 1rem;
 }
+
 
 a {
   text-decoration: none;
