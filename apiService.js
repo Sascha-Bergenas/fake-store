@@ -8,14 +8,14 @@ export async function getData() {
 
     const result = await response.json();
 
-    result.forEach((product) =>
+    /*     result.forEach((product) =>
       console.log(
         product.title,
         product.price,
         product.description,
         product.image
       )
-    );
+    ); */
 
     return result;
   } catch (error) {

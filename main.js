@@ -1,5 +1,8 @@
 import { getData } from "./apiService.js";
-import { productCard } from "./uiComponent.js";
+import { productCard, productSearch } from "./uiComponent.js";
+
+const searchField = document.querySelector("input");
+const searchButton = document.querySelector("button");
 
 async function init() {
   const products = await getData();
@@ -13,3 +16,10 @@ async function init() {
 }
 
 init();
+
+searchButton.addEventListener("click", (event) =>
+  productSearch(event, searchField)
+);
+searchField.addEventListener("keydown", (event) =>
+  productSearch(event, searchField)
+);

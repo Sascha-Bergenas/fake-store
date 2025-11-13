@@ -13,3 +13,16 @@ export function productCard(product) {
 
   return card;
 }
+
+export function productSearch(event, searchField) {
+  if (
+    event.type === "click" ||
+    (event.type === "keydown" && event.key === "Enter")
+  ) {
+    event.preventDefault();
+    const product1 = searchField.value;
+    console.log("search:", product1);
+  }
+}
+
+export function displayProduct() {}
