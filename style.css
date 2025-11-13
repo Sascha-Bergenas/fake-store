@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+:root {
+/* colors */
+  --primary-color: #1ccbf4; ;
+  --secondary-color: #1ccbf4;
+  --background-color: #63e2fd;
+  --border-color:#038ab7 ;
+  --accent-color: #a2f0ff;
+  --text-color: #063046;
+
+  --focus-color: #125978;
+  --focus-text-color: #ebfdff;
+
+  /* typography */
+  --font-main: "Roboto", "Open Sans", Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base:1.6;
+}
+
+
+body{
+    background-color: var(--background-color);
+    font-family: var(--font-main);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   
+}
+.container{
+    text-align: center;
+    width: 90%;
+    padding: 2rem;
+    
+
+}
+
+.container h1{
+    color: var(--text-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;   
+    
+}
+
+.container input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 8px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);;
+}
+
+
+.container input[type="text"]:focus {
+    outline:none;
+    background: var(--focus-color);
+    color:var(--focus-text-color);
+}
+
+#productList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    
+}
+#productCard{
+    background: var(--secondary-color);
+    border-radius: 10px;
+    padding: 1rem;
+    width: 100%;
+}
+
+#productCard:hover{
+    transform: scale(1.05);
+}
+
+#productCard img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#productCard h3{
+   font-size: 1rem;
+}
+
+#productCard .price{
+   color: var(--secondary-color);
+}
