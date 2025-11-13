@@ -17,6 +17,7 @@ export async function getData() {
       )
     ); */
 
+    console.log(result);
     return result;
   } catch (error) {
     console.error(error.message);

@@ -1,4 +1,3 @@
-//render one card
 export function productCard(product) {
   const container = document.getElementById("product-list");
 
@@ -15,18 +14,6 @@ export function productCard(product) {
   return card;
 }
 
-//render list
-function renderProducts(products) {
-  const container = document.getElementById("product-list");
-  container.innerHTML = ""; // clear old results
-
-  /*  products.forEach((product) => {
-    const card = productCard(product);
-    container.appendChild(card);
-  }); */
-}
-
-//inputfield + search functionality
 export function productSearch(event, searchField) {
   if (
     event.type === "click" ||
@@ -36,10 +23,4 @@ export function productSearch(event, searchField) {
     const product1 = searchField.value;
     console.log("search:", product1);
   }
-}
-
-export async function handleSearch() {
-  const input = document.querySelector("#search-product").value.trim();
-
-  return getData(input);
 }
