@@ -39,9 +39,7 @@ body{
     text-align: center;
    
 }
-body> {
 
-}
 .container{
     text-align: center;
     width: 90%;
@@ -57,7 +55,7 @@ body> {
     
 }
 
-.container input[type="text"] button {
+#search-product input[type="text"] button {
     width: 100%;
     max-width: 300px;
     justify-content: center;
