@@ -1,5 +1,5 @@
 import { getData } from "./apiService.js";
-import { productCard } from "./uiComponent.js";
+import { productCard, renderSearched } from "./uiComponent.js";
 
 const searchField = document.querySelector("input");
 const searchButton = document.querySelector("button");
@@ -16,3 +16,13 @@ async function init() {
 }
 
 init();
+
+searchButton.addEventListener("click", async () => {
+  const products = await getData();
+  const input = document.querySelector("#search-product").value.trim();
+
+  const searched = products.filter((product) => {
+    return product.title.toLowerCase().includes(input.toLowerCase());
+  });
+  renderSearched(searched);
+});
