@@ -36,6 +36,7 @@ export function productCard(product) {
     <p>${product.description}</p>
     <img src="${product.image}" />
   `;
+card.addEventListener("click", showProduct(product))
 
   return card;
 }
